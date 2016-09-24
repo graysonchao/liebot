@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"encoding/json"
 	"net/http"
 
 	"github.com/graysonchao/liebot"
@@ -39,7 +39,19 @@ func comicHandler(w http.ResponseWriter, r *http.Request) {
 
 	comicLink := liebot.Search(slackRequest.Text)
 
-	fmt.Fprintf(w, comicLink)
+	res := &struct {
+		ResponseType string   `json:"response_type"`
+		Text         string   `json:"text"`
+		Attachments  []string `json:"attachments"`
+	}{
+		ResponseType: "in_channel",
+		Text:         comicLink,
+		Attachments:  []string{},
+	}
+
+	w.Header().Set("Content-type", "application/json")
+
+	json.NewEncoder(w).Encode(res)
 }
 
 func main() {
