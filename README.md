@@ -13,4 +13,4 @@ Example usage:
     go install github.com/graysonchao/liebot
     liebot
     
-Then proxy 80 or 443 to 8443.
+Then reverse proxy 80 or 443 to 8443.
