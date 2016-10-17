@@ -3,6 +3,8 @@
 
 Liebot is a Slack bot that searches ohnorobot and the Achewood comic index page.
 
+It uses the [Slack slash command API](https://api.slack.com/slash-commands).
+
 Example usage:
 
 ![Example image]
