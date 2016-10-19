@@ -17,7 +17,7 @@ Example usage:
     go install github.com/graysonchao/liebot
     nohup liebot > liebot.txt &
     
-Then reverse proxy 80 or 443 to 8443.
+Then reverse proxy the listening port (pretty sure it's 8443) to 80 or 443.
 
 Test request:
     curl -XPOST -d "text=I'm the guy who sucks" hostname.com/comic
