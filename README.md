@@ -15,7 +15,7 @@ Example usage:
 ### On some WAN-facing host
     go get github.com/graysonchao/liebot
     go install github.com/graysonchao/liebot
-    liebot
+    nohup liebot > liebot.txt &
     
 Then reverse proxy 80 or 443 to 8443.
 
