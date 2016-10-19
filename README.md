@@ -22,6 +22,7 @@ Then reverse proxy 443 to the port that liebot listens on (8443 IIRC).
 Note that liebot _DOES NOT TERMINATE SSL!_ That's why you use a reverse proxy like Nginx and terminate SSL there instead. Seriously, DON'T put liebot on an open port and just let it run - unless you're down to get MITMed.
 
 Test request:
+
     curl -XPOST -d "text=I'm the guy who sucks" hostname.com/comic
 
 ### In Slack
