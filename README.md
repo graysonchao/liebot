@@ -17,7 +17,9 @@ Example usage:
     go install github.com/graysonchao/liebot
     nohup liebot > liebot.txt &
     
-Then reverse proxy the listening port (pretty sure it's 8443) to 80 or 443.
+Then reverse proxy 443 to the port that liebot listens on (8443 IIRC).
+
+Note that liebot _DOES NOT TERMINATE SSL!_ That's why you use a reverse proxy like Nginx and terminate SSL there instead. Seriously, DON'T put liebot on an open port and just let it run - unless you're down to get MITMed.
 
 Test request:
     curl -XPOST -d "text=I'm the guy who sucks" hostname.com/comic
