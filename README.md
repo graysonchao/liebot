@@ -11,8 +11,16 @@ Example usage:
 (http://i.imgur.com/zrLtnYg.png)
 
 ## To install
+
+### On some WAN-facing host
     go get github.com/graysonchao/liebot
     go install github.com/graysonchao/liebot
     liebot
     
 Then reverse proxy 80 or 443 to 8443.
+
+Test request:
+    curl -XPOST -d "text=I'm the guy who sucks" hostname.com/comic
+
+### In Slack
+Set up a [slash command integration](https://api.slack.com/slash-commands) and point it at `/comic` on the host that's serving liebot.
